@@ -11,6 +11,7 @@ var gulp        = require('gulp'),
     uglify      = require('gulp-uglify'),
     imagemin    = require("gulp-imagemin");
 
+
 gulp.task('browser-sync', function() {
   browserSync({
   files: './app/index.html',
