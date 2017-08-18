@@ -5,7 +5,7 @@ var gulp        = require('gulp'),
     autoprefix  = require('gulp-autoprefixer'),
     inject      = require('gulp-inject'),
     concat      = require('gulp-concat'),
-    clean       = require('gulp-clean'),
+    //clean       = require('gulp-clean'),
     rename      = require('gulp-rename'),
     minifyCSS   = require('gulp-minify-css'),
     uglify      = require('gulp-uglify'),
@@ -21,7 +21,7 @@ gulp.task('browser-sync', function() {
 
 gulp.task('index', function () {
   var target = gulp.src('./app/index.html'); 
-  var sources = gulp.src(['./app/**/*.js', './app/**/*.css'], {read: false});
+  var sources = gulp.src(['./app/js/script.js', './app/css/main.css'], {read: false});
   return target.pipe(inject(sources))
   .pipe(gulp.dest('./app'));
 });
@@ -57,7 +57,7 @@ gulp.task('js', function() {
   ])
   .pipe(uglify())
   .pipe(concat('all.js'))
-  .pipe(rename({extname:'.min.css'}))
+  .pipe(rename({extname:'.min.js'}))
   .pipe(gulp.dest('app/js'));
 });
 
