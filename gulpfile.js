@@ -15,13 +15,6 @@ var bases = {
  dist: 'web/dist/',
 };
 
-var sassFiles = 'src/scss/**/*.scss',  
-    cssFiles = 'src/css/',
-    cssWebFiles = 'web/dist/css/';
-
-var Script ='script.js',
-    jsWebFiles = 'web/dist/js';
-
 gulp.task('browser-sync', function() {
   browserSync({
   files: './src/index.html',
@@ -66,7 +59,7 @@ gulp.task('js', function() {
   ])
   .pipe(uglify())
   .pipe(concat('all.js'))
-  .pipe(rename({extname:'.min.css'}))
+  .pipe(rename({extname:'.min.js'}))
   .pipe(gulp.dest('web/dist/js'));
 });
 
